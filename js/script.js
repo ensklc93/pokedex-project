@@ -1,9 +1,29 @@
-let pokemonList = [
-    { name: 'Pikachu', height: '0.4 m', weight: '6 kg', type: 'electric' },
-    { name: 'Kadabra', height: '1.3 m', weight: '56.5 kg', type: 'pschic' },
-    { name: 'Ho-oh', height: '3.8 m', weight: '199 kg', type: 'fire & flying' },
-    { name: 'Mewtwo', height: '2.0 m', weight: '122 kg', type: 'psychic' },
-];
+
+let pokemonRepository = (function () {
+
+    let pokemonList = [
+        { name: 'Pikachu', height: 0.4, weight: 6, type: 'electric' },
+        { name: 'Kadabra', height: 1.3, weight: 56.5, type: 'psychic ' },
+        { name: 'Ho-oh', height: 3.8, weight: 199, type: ['fire', 'flying'] },
+        { name: 'Mewtwo', height: 2.0, weight: 122, type: 'psychic' },
+    ];
+
+    function getAll () {
+        return pokemonList;
+    }
+
+    function add (item) {
+        return pokemonList.push(item);
+    }
+
+
+    return {
+        getAll: getAll,
+        add: add
+    }
+
+})();
+
 
 // Loop through pokemonList array
 pokemonList.forEach((pokemon) => {
@@ -14,3 +34,4 @@ pokemonList.forEach((pokemon) => {
     } else {
         document.write(`${pokemon.name} (Height: ${pokemon.height}, Weight: ${pokemon.weight}, Type: ${pokemon.type})<br>`)
     }
+});
