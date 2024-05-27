@@ -6,13 +6,11 @@ let pokemonList = [
 ];
 
 // Loop through pokemonList array
-for (i = 0; i < pokemonList.length; i++) {
-    // show objects (pokemon) with the tpye of 'electric' and add a text to highlight. 
-    if(pokemonList[i].type === 'electric'){
-    document.write(`${pokemonList[i].name} (Height: ${pokemonList[i].height}, Weight: ${pokemonList[i].weight}, Type: ${pokemonList[i].type}) - That's AC/DC !<br> `)
-    // show all other objects (pokemon) 
+pokemonList.forEach((pokemon) => {
+    if (pokemon.height >= 2) {
+        // show objects (pokemon) with height over or equal to 2 and add a text to highlight. 
+        document.write(`${pokemon.name} (Height: ${pokemon.height}, Weight: ${pokemon.weight}, Type: ${pokemon.type}) - Wow that's big! <br> `)
+        // show all other objects (pokemon) 
     } else {
-        document.write(`${pokemonList[i].name} (Height: ${pokemonList[i].height}, Weight: ${pokemonList[i].weight}, Type: ${pokemonList[i].type})<br>`)
+        document.write(`${pokemon.name} (Height: ${pokemon.height}, Weight: ${pokemon.weight}, Type: ${pokemon.type})<br>`)
     }
-}
-
