@@ -24,9 +24,8 @@ let pokemonRepository = (function () {
 
 })();
 
-
 // Loop through pokemonList array
-pokemonList.forEach((pokemon) => {
+pokemonRepository.getAll().forEach((pokemon) => {
     if (pokemon.height >= 2) {
         // show objects (pokemon) with height over or equal to 2 and add a text to highlight. 
         document.write(`${pokemon.name} (Height: ${pokemon.height}, Weight: ${pokemon.weight}, Type: ${pokemon.type}) - Wow that's big! <br> `)
@@ -34,4 +33,5 @@ pokemonList.forEach((pokemon) => {
     } else {
         document.write(`${pokemon.name} (Height: ${pokemon.height}, Weight: ${pokemon.weight}, Type: ${pokemon.type})<br>`)
     }
-});
+}); 
+
