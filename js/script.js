@@ -8,12 +8,17 @@ let pokemonRepository = (function () {
         { name: 'Mewtwo', height: 2.0, weight: 122, type: 'psychic' },
     ];
 
-    function getAll () {
+    function getAll() {
         return pokemonList;
     }
 
-    function add (item) {
-        return pokemonList.push(item);
+    function add(item) {
+        // Bonus Task
+        if (typeof item === 'object') {
+            if (Object.hasOwn(item, 'name') && Object.hasOwn(item, 'height') && Object.hasOwn(item, 'weight') && Object.hasOwn(item, 'type')) {
+                return pokemonList.push(item);
+            }
+        }
     }
 
 
@@ -33,5 +38,7 @@ pokemonRepository.getAll().forEach((pokemon) => {
     } else {
         document.write(`${pokemon.name} (Height: ${pokemon.height}, Weight: ${pokemon.weight}, Type: ${pokemon.type})<br>`)
     }
-}); 
+});
 
+// Bonus Task
+console.log(pokemonRepository.getAll().filter((pokemon) => pokemon.name === 'Mewtwo'));
