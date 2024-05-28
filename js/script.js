@@ -28,7 +28,6 @@ let pokemonRepository = (function () {
 
     return {
         getAll: getAll,
-        add: add
         add: add,
         filter: filter
     }
