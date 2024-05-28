@@ -38,7 +38,3 @@ pokemonRepository.getAll().forEach((pokemon) => {
     } else {
         document.write(`${pokemon.name} (Height: ${pokemon.height}, Weight: ${pokemon.weight}, Type: ${pokemon.type})<br>`)
     }
-});
-
-// Bonus Task
-console.log(pokemonRepository.getAll().filter((pokemon) => pokemon.name === 'Mewtwo'));
