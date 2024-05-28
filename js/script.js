@@ -52,5 +52,6 @@ let pokemonRepository = (function () {
 
 // Loop through pokemonList array
 pokemonRepository.getAll().forEach((pokemon) => {
+    pokemonRepository.addListItem(pokemon)
 });
 
