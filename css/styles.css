@@ -1,0 +1,23 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.pokemon-button {
+    background-color: rgba(128, 128, 128, 0.425);
+    margin-left: 100px;
+    width: 200px;
+    height: 60px;
+    color: rgb(254, 255, 255);
+}
+
+p {
+    margin: 20px 100px 10px;
+    font-size: large;
+    font-weight: bold;
+}
+
+ul {
+    list-style: none;
+}
