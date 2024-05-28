@@ -24,8 +24,8 @@ let pokemonRepository = (function () {
     }
 
     // Bonus Task
-    function filter() {
-        return pokemonList.filter((pokemon) => pokemon.name === 'Mewtwo');
+    function filter(pokemonName) {
+        return pokemonList.filter((pokemon) => pokemon.name === pokemonName);
     }
 
     function addListItem(pokemon) {
