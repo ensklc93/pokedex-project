@@ -1,3 +1,4 @@
+
 let pokemonRepository = (function () {
 
     let pokemonList = [
@@ -43,6 +44,8 @@ let pokemonRepository = (function () {
     return {
         getAll: getAll,
         add: add,
+        filter: filter,
+        addListItem: addListItem
     }
 
 })();
@@ -56,4 +59,6 @@ pokemonRepository.getAll().forEach((pokemon) => {
     } else {
         document.write(`${pokemon.name} (Height: ${pokemon.height}, Weight: ${pokemon.weight}, Type: ${pokemon.type})<br>`)
     }
+});    pokemonRepository.addListItem(pokemon)
 });
+
