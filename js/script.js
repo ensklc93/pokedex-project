@@ -2,10 +2,10 @@
 let pokemonRepository = (function () {
 
     let pokemonList = [
-        { name: 'Pikachu', height: 0.4, weight: 6, type: 'electric' },
-        { name: 'Kadabra', height: 1.3, weight: 56.5, type: 'psychic ' },
+        { name: 'Pikachu', height: 0.4, weight: 6, type: ['electric'] },
+        { name: 'Kadabra', height: 1.3, weight: 56.5, type: ['psychic'] },
         { name: 'Ho-oh', height: 3.8, weight: 199, type: ['fire', 'flying'] },
-        { name: 'Mewtwo', height: 2.0, weight: 122, type: 'psychic' },
+        { name: 'Mewtwo', height: 2.0, weight: 122, type: ['psychic'] },
     ];
 
     function getAll() {
