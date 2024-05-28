@@ -28,6 +28,19 @@ let pokemonRepository = (function () {
         return pokemonList.filter((pokemon) => pokemon.name === 'Mewtwo');
     }
 
+    function addListItem(pokemon) {
+        let pokemonUl = document.querySelector('.pokemon-list')
+        let listItem = document.createElement('li')
+        let button = document.createElement('button')
+        button.innerText = pokemon.name
+        button.classList.add('pokemon-button')
+        listItem.appendChild(button);
+        pokemonUl.appendChild(listItem);
+        button.addEventListener('click', function showDetails() {
+            console.log(pokemon.name)
+        })
+    }
+
     return {
         getAll: getAll,
         add: add,
