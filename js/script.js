@@ -1,4 +1,3 @@
-    
 let pokemonRepository = (function () {
 
     let pokemonList = [
@@ -44,7 +43,6 @@ let pokemonRepository = (function () {
     return {
         getAll: getAll,
         add: add,
-        filter: filter
     }
 
 })();
