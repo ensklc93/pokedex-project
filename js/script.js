@@ -21,10 +21,16 @@ let pokemonRepository = (function () {
         }
     }
 
+    // Bonus Task
+    function filter() {
+        return pokemonList.filter((pokemon) => pokemon.name === 'Mewtwo');
+    }
 
     return {
         getAll: getAll,
         add: add
+        add: add,
+        filter: filter
     }
 
 })();
@@ -38,3 +44,4 @@ pokemonRepository.getAll().forEach((pokemon) => {
     } else {
         document.write(`${pokemon.name} (Height: ${pokemon.height}, Weight: ${pokemon.weight}, Type: ${pokemon.type})<br>`)
     }
+});
