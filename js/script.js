@@ -17,6 +17,8 @@ let pokemonRepository = (function () {
         if (typeof item === 'object') {
             if (Object.hasOwn(item, 'name') && Object.hasOwn(item, 'height') && Object.hasOwn(item, 'weight') && Object.hasOwn(item, 'type')) {
                 return pokemonList.push(item);
+            } else {
+                alert('You have created an invalid pokemon. Please consider using "name, height, weight and type" to create a new pokemon!')
             }
         }
     }
