@@ -1,6 +1,8 @@
 
 let pokemonRepository = (function () {
 
+    let pokemonList = [];
+
 
     function getAll() {
         return pokemonList;
