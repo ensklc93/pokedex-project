@@ -1,4 +1,4 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -12,12 +12,74 @@
     color: rgb(254, 255, 255);
 }
 
-p {
+.pokedex-title {
     margin: 20px 100px 10px;
-    font-size: large;
+    font-size: xx-large;
     font-weight: bold;
 }
 
 ul {
     list-style: none;
+}
+
+#modal-container {
+    display: none;
+}
+
+#modal-container.is-visible {
+    position: fixed;
+    padding: 20px;
+    box-sizing: border-box;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+
+    /* to show it above other content */
+    z-index: 999;
+
+    /* to allow scrolling if the screen is not high enough*/
+    overflow: auto;
+
+    /* this is used to center the modal */
+    display: grid;
+    text-align: center;
+    justify-items: center;
+    align-items: center;
+}
+
+.modal {
+    display: block;
+    background-color: white;
+    width: 30%;
+}
+
+.pokemon-title {
+    display: inline-block;
+    text-align: center;
+    text-transform: capitalize;
+}
+
+.button-close {
+    float: right;
+}
+
+.pokemon-image {
+    display: block;
+    margin: 40px auto 0;
+    width: 200px;
+    height: 200px;
+}
+
+.pokemon-height,
+.pokemon-type {
+    display: inline-block;
+    text-align: center;
+    margin: 0 16px;
+    font-size: large;
+    font-weight: 300;
+}
+
+
 }
