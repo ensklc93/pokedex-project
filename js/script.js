@@ -21,11 +21,9 @@ let pokemonRepository = (function () {
         button.classList.add('pokemon-button')
         listItem.appendChild(button);
         pokemonUl.appendChild(listItem);
-        button.addEventListener('click', function showDetails() {
-            loadDetails(pokemon).then(function () {
-                console.log(pokemon);
-            });
-        });
+        button.addEventListener('click', () => {
+            showDetails(pokemon)
+        })
     }
 
     function loadList() {
@@ -58,12 +56,20 @@ let pokemonRepository = (function () {
         });
     }
 
+    function showDetails(item) {
+        pokemonRepository.loadDetails(item).then(function () {
+            console.log(item);
+        });
+    }
+
+
     return {
         getAll: getAll,
         add: add,
         addListItem: addListItem,
         loadList: loadList,
-        loadDetails: loadDetails
+        loadDetails: loadDetails,
+        showDetails: showDetails
     }
 
 })();
