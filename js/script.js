@@ -56,9 +56,63 @@ let pokemonRepository = (function () {
         });
     }
 
+    const modalContainer = document.querySelector('#modal-container')
+
     function showDetails(item) {
         pokemonRepository.loadDetails(item).then(function () {
-            console.log(item);
+            let modal = document.createElement('div');
+            modal.classList.add('modal');
+
+            let buttonClose = document.createElement('button')
+            buttonClose.textContent = 'X';
+            buttonClose.classList.add('button-close')
+            buttonClose.addEventListener('click', () => {
+                modalContainer.classList.remove('is-visible')
+                modalContainer.innerHTML = '';
+            })
+
+            let pokemonImage = document.createElement('img')
+            pokemonImage.setAttribute('src', item.imageUrl)
+            pokemonImage.classList.add('pokemon-image')
+
+            let h1 = document.createElement('h1');
+            h1.textContent = item.name;
+            h1.classList.add('pokemon-title')
+
+            let pokemonHeight = document.createElement('p');
+            pokemonHeight.textContent = `Height: ${item.height}`;
+            pokemonHeight.classList.add('pokemon-height')
+
+
+            let pokemonType = document.createElement('p');
+            pokemonType.textContent = `Types: ${item.types.map(element => {
+                return element.type.name                // I have tried to convert to string to make it appeal better but got some problems with it!!
+            })};`
+            pokemonType.classList.add('pokemon-type')
+
+
+            modal.appendChild(h1);
+            modal.appendChild(buttonClose)
+            modal.appendChild(pokemonImage)
+            modal.appendChild(pokemonHeight)
+            modal.appendChild(pokemonType)
+            modalContainer.appendChild(modal)
+
+            modalContainer.classList.add('is-visible')
+            modalContainer.addEventListener('click', (e) => {
+                if(e.target == modalContainer && e.target != modal){
+                    modalContainer.classList.remove('is-visible')
+                    modalContainer.innerHTML = '';
+                }
+            })
+
+            window.addEventListener('keydown', (event) => {
+                if (event.key === 'Escape') {
+                    modalContainer.classList.remove('is-visible')
+                    modalContainer.innerHTML = '';
+                }
+              })
+
         });
     }
 
