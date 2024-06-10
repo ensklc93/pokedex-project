@@ -14,15 +14,22 @@ let pokemonRepository = (function () {
     }
 
     function addListItem(pokemon) {
-        let pokemonUl = document.querySelector('.pokemon-list')
+        let pokemonUl = document.querySelector('.list-group')
         let listItem = document.createElement('li')
+        listItem.classList.add('list-group-item')
         let button = document.createElement('button')
         button.innerText = pokemon.name
-        button.classList.add('pokemon-button')
+        button.classList.add('btn', 'btn-dark')
+        button.setAttribute('type', 'button')
+        button.setAttribute('data-toggle', 'modal')
+        button.setAttribute('data-target', '#pokedexModal')
         listItem.appendChild(button);
         pokemonUl.appendChild(listItem);
         button.addEventListener('click', () => {
             showDetails(pokemon)
+            modalBody.innerHTML = '';
+            modalTitle.innerHTML = '';
+
         })
     }
 
@@ -56,63 +63,33 @@ let pokemonRepository = (function () {
         });
     }
 
-    const modalContainer = document.querySelector('#modal-container')
+    const modalBody = document.querySelector('.modal-body')
+    const modalTitle = document.querySelector('.modal-title')
+    const buttonClose = document.querySelector('.close')
 
     function showDetails(item) {
         pokemonRepository.loadDetails(item).then(function () {
-            let modal = document.createElement('div');
-            modal.classList.add('modal');
 
-            let buttonClose = document.createElement('button')
+            modalTitle.textContent = item.name;
             buttonClose.textContent = 'X';
-            buttonClose.classList.add('button-close')
-            buttonClose.addEventListener('click', () => {
-                modalContainer.classList.remove('is-visible')
-                modalContainer.innerHTML = '';
-            })
 
             let pokemonImage = document.createElement('img')
             pokemonImage.setAttribute('src', item.imageUrl)
             pokemonImage.classList.add('pokemon-image')
 
-            let h1 = document.createElement('h1');
-            h1.textContent = item.name;
-            h1.classList.add('pokemon-title')
 
             let pokemonHeight = document.createElement('p');
             pokemonHeight.textContent = `Height: ${item.height}`;
-            pokemonHeight.classList.add('pokemon-height')
+            pokemonHeight.classList.add('pokemon-height');
 
 
             let pokemonType = document.createElement('p');
-            pokemonType.textContent = `Types: ${item.types.map(element => {
-                return element.type.name                // I have tried to convert to string to make it appeal better but got some problems with it!!
-            })};`
+            pokemonType.textContent = `Types: ${item.types.map(element => element.type.name).join(", ")}`;
             pokemonType.classList.add('pokemon-type')
 
-
-            modal.appendChild(h1);
-            modal.appendChild(buttonClose)
-            modal.appendChild(pokemonImage)
-            modal.appendChild(pokemonHeight)
-            modal.appendChild(pokemonType)
-            modalContainer.appendChild(modal)
-
-            modalContainer.classList.add('is-visible')
-            modalContainer.addEventListener('click', (e) => {
-                if(e.target == modalContainer && e.target != modal){
-                    modalContainer.classList.remove('is-visible')
-                    modalContainer.innerHTML = '';
-                }
-            })
-
-            window.addEventListener('keydown', (event) => {
-                if (event.key === 'Escape') {
-                    modalContainer.classList.remove('is-visible')
-                    modalContainer.innerHTML = '';
-                }
-              })
-
+            modalBody.appendChild(pokemonImage);
+            modalBody.appendChild(pokemonHeight);
+            modalBody.appendChild(pokemonType);
         });
     }
 
