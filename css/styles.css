@@ -10,7 +10,7 @@
 }
 
 .pokemon-type {
-    text-transform: capitalize;
+  text-transform: capitalize;
 }
 
 .modal-content {
@@ -46,14 +46,12 @@ li > button.btn.btn-dark {
   font-size: x-large;
   font-weight: bolder;
   color: rgba(238, 64, 53, 255);
-  
 }
 
 #pokedexModalLabel {
   margin: 0 auto;
   text-transform: capitalize;
 }
-
 
 @media screen and (max-width: 700px) {
   .pokemon-height,
