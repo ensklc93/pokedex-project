@@ -33,6 +33,17 @@ li > button.btn.btn-dark {
   font-weight: bold;
 }
 
+.list-group {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.navbar {
+  justify-content: space-between;
+}
+
 .list-group-item {
   border: none;
 }
@@ -43,9 +54,11 @@ li > button.btn.btn-dark {
 }
 
 #pokedex-title {
-  font-size: x-large;
+  font-size: xx-large;
   font-weight: bolder;
   color: rgba(238, 64, 53, 255);
+  margin-left: auto;
+  margin-right: auto;
 }
 
 #pokedexModalLabel {
