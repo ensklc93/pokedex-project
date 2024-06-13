@@ -104,11 +104,29 @@ let pokemonRepository = (function () {
 })()
 
 pokemonRepository.loadList().then(function () {
-  // Now the data is loaded!
   pokemonRepository.getAll().forEach(function (pokemon) {
     pokemonRepository.addListItem(pokemon)
   })
 })
 
-const message = 'Hello, world'
-console.log(message)
+
+// Pokemon search function
+function searchPokemon() {
+  let input = document.querySelector('.form-control').value
+  input = input.toLowerCase();
+  let list = document.querySelectorAll('.list-group-item');
+
+  for (let i = 0; i < list.length; i++) {
+    if (!list[i].innerHTML.toLowerCase().includes(input)) {
+      list[i].style.display = "none";
+    }
+    else {
+      list[i].style.display = "block";
+    }
+  }
+}
+
+document.querySelector('.btn-outline-success').addEventListener('click', (e) => {
+  searchPokemon()
+  e.preventDefault();
+})
