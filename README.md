@@ -2,6 +2,8 @@
 
 This project was initailly created to present my newly learned progamming skills. On the main page, which is also the only one, 250 Pokemon get listed. When clicked on the Pokemon names, a modal will pop-up and show the details, such as name, height, type and an image of the Pokemon.
 
+You can visit the web page via: [The Pokedex Project Github Pages](https://github.com/ensklc93/pokedex-project)
+
 ## Objective
 
 The objective of this project is to build a small web application with HTML, CSS, and JavaScript that loads data from an external API and enables the viewing of data points in detail.
