@@ -1,6 +1,6 @@
 # The Pokedex Project
 
-This project was initailly created to present my newly learned progamming skills. On the main page, which is also the only one, 250 Pokemon get listed. When clicked on the Pokemon names, a modal will pop-up and show the details, such as name, height, type and an image of the Pokemon.
+This project was initially created to present my newly learned programming skills.  On the main page, which is also the only one, 250 Pokemon get listed. When clicked on the Pokemon names, a modal will pop-up and show the details, such as name, height, type and an image of the Pokemon.
 
 You can visit the web page via: [The Pokedex Project Github Pages](https://ensklc93.github.io/pokedex-project/)
 
