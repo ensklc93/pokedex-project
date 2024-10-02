@@ -20,12 +20,12 @@ You can visit the web page via: [The Pokedex Project Github Pages](https://enskl
 
 ## Getting Started
 
-1- Clone the repository:
+1. Clone the repository:
 ```bash
 git clone <repository-url>
 ```
 
-2- Open `index.html` in your web browser.
+2. Open `index.html` in your web browser.
 
 ## Usage
 
